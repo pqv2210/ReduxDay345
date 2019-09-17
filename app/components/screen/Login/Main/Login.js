@@ -2,7 +2,6 @@
 import React from 'react'
 import {View, Image, Text, TouchableOpacity, TextInput, ActivityIndicator} from 'react-native'
 import style from './style'
-import {NavigationActions, StackActions} from 'react-navigation'
 
 class Login extends React.Component {
     constructor(props) {
@@ -17,6 +16,22 @@ class Login extends React.Component {
     }
 
     render() {
+        const loginbtn = (
+            <TouchableOpacity
+                style={style.touch}
+                onPress={this.navigateToChat}
+            >
+                <Text style={style.touchtext}>Login</Text>
+            </TouchableOpacity>
+        )
+        const loadingview = (
+            <View style={style.touch}>
+                <ActivityIndicator
+                    size='small'
+                    color='#00ff00'
+                />
+            </View>
+        )
         return (
             <View style={style.container}>
                 <View style={style.separator2}/>
@@ -44,12 +59,7 @@ class Login extends React.Component {
                     />
                 </View>
                 <View style={style.separator}/>
-                <TouchableOpacity
-                    style={style.touch}
-                    onPress={this.navigateToChat}
-                >
-                    <Text style={style.touchtext}>Login</Text>
-                </TouchableOpacity>
+                {this.state.isLoading ? loadingview : loginbtn}
                 <TouchableOpacity>
                     <Text style={style.textforgot}>FORGOT PASSWORD?</Text>
                 </TouchableOpacity>

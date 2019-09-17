@@ -1,32 +1,28 @@
 // Copyright (c) 2019-present vantuan88291, Personal. All Rights Reserved.
-import {FETCH, FETCH_FAILURE, FETCH_SUCCESS} from '../actions/types'
+import {DELETE_STATE, FETCH_SUCCESS, FETCH_TEXT} from '../actions/types'
 
 const initialState = {
-    data: [],
-    isDone: false,
-    isFetching: false,
-    error: false,
+    data: '',
+    text: '',
+    messages: [],
 }
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-    case FETCH:
+    case DELETE_STATE:
         return {
             ...state,
-            data: [],
-            isFetching: true,
+            data: '',
         }
     case FETCH_SUCCESS:
         return {
             ...state,
-            isFetching: false,
             data: action.data,
         }
-    case FETCH_FAILURE:
+    case FETCH_TEXT:
         return {
             ...state,
-            isFetching: false,
-            error: true,
+            text: action.text,
         }
     default: return state
     }

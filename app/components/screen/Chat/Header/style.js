@@ -4,7 +4,6 @@ import {StyleSheet} from 'react-native'
 const style = StyleSheet.create({
     imgbg: {
         height: 55,
-        width: '100%',
     },
     headerbox: {
         flexDirection: 'row',

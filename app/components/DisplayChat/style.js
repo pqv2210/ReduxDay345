@@ -14,6 +14,7 @@ const style = StyleSheet.create({
     },
     flatlist: {
         flexDirection: 'row-reverse',
+        margin: 3,
     },
     flatlistback: {
         flexDirection: 'row',
@@ -39,7 +40,7 @@ const style = StyleSheet.create({
     talkBubbleSquareBack: {
         width: 'auto',
         height: 'auto',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#f0feff',
         borderRadius: 10,
         marginLeft: -15,
         maxWidth: 260,
@@ -47,7 +48,7 @@ const style = StyleSheet.create({
     talkBubbleSquareBackLoading: {
         width: 50,
         height: 50,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#f0feff',
         borderRadius: 10,
         marginLeft: -15,
         alignItems: 'center',
@@ -72,7 +73,7 @@ const style = StyleSheet.create({
         borderRightWidth: 35,
         borderTopWidth: 35,
         borderRightColor: 'transparent',
-        borderTopColor: '#FFFFFF',
+        borderTopColor: '#f0feff',
         transform: [
             {rotate: '90deg'},
         ],

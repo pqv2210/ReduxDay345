@@ -1,9 +1,10 @@
 // Copyright (c) 2019-present vantuan88291, Personal. All Rights Reserved.
-import {FETCH, FETCH_FAILURE, FETCH_SUCCESS} from './types'
+import {DELETE_STATE, FETCH_SUCCESS, FETCH_TEXT} from './types'
 
-export const getData = () => {
+export const deleteState = (data) => {
     return {
-        type: FETCH,
+        type: DELETE_STATE,
+        data,
     }
 }
 
@@ -14,10 +15,9 @@ export const getDataSuccess = (data) => {
     }
 }
 
-export const getDataFailure = () => {
+export const fetchText = (text) => {
     return {
-        type: FETCH_FAILURE,
+        type: FETCH_TEXT,
+        text,
     }
 }
-
-export const fetchData = () => {}
