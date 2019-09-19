@@ -1,19 +1,27 @@
 // Copyright (c) 2019-present vantuan88291, Personal. All Rights Reserved.
-import {DELETE_STATE, FETCH_SUCCESS, FETCH_TEXT} from '../actions/types'
+import {
+    DELETE_LOGIN,
+    DELETE_STATE,
+    FETCH_SUCCESS,
+    FETCH_TEXT,
+    LOGIN_FAILURE,
+    LOGIN_REQUEST,
+    LOGIN_SUCCESS,
+} from '../actions/types'
 
 const initialState = {
     data: '',
     text: '',
     messages: [],
+    item: '',
+    username: '',
+    password: '',
+    message: '',
+    status: '',
 }
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-    case DELETE_STATE:
-        return {
-            ...state,
-            data: '',
-        }
     case FETCH_SUCCESS:
         return {
             ...state,
@@ -23,6 +31,35 @@ export default function reducer(state = initialState, action) {
         return {
             ...state,
             text: action.text,
+        }
+    case LOGIN_REQUEST:
+        return {
+            ...state,
+            username: action.payload.username,
+            password: action.payload.password,
+        }
+    case LOGIN_SUCCESS:
+        return {
+            ...state,
+            message: action.payload.message,
+            status_code: action.payload.status_code,
+        }
+    case LOGIN_FAILURE:
+        return {
+            ...state,
+            message: action.payload.message,
+            status_code: action.payload.status_code,
+        }
+    case DELETE_STATE:
+        return {
+            ...state,
+            data: '',
+        }
+    case DELETE_LOGIN:
+        return {
+            ...state,
+            message: '',
+            status_code: '',
         }
     default: return state
     }

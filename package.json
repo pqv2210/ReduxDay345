@@ -8,6 +8,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
+    "apisauce": "^1.1.1",
     "eslint-plugin-header": "^3.0.0",
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-react": "^7.14.3",
