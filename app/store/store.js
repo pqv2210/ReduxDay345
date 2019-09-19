@@ -9,10 +9,8 @@ import AsyncStorage from '@react-native-community/async-storage'
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 
 const persistConfig = {
-    key: 'root',
+    key: 'rootReducer',
     storage: AsyncStorage,
-    blacklist: ['message', 'status_code'],
-    whitelist: ['messages', 'username', 'password'],
     stateReconciler: autoMergeLevel2,
 }
 const logger = createLogger()

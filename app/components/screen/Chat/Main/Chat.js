@@ -49,7 +49,6 @@ class Chat extends React.Component {
             this.setState({
                 messages: arr,
                 isChecking: true,
-                text: '',
             })
             this.clearTextInput()
             Keyboard.dismiss()

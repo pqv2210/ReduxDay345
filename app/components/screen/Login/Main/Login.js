@@ -53,7 +53,6 @@ class Login extends React.Component {
             }
         }
         if (nextProps.status_code === 200 && prevState.isChecking && nextProps.message) {
-            console.log('login.59')
             nextProps.navigateToChat()
             return {
                 isLoading: false,

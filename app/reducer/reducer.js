@@ -12,12 +12,12 @@ import {
 const initialState = {
     data: '',
     text: '',
-    messages: [],
     item: '',
     username: '',
     password: '',
     message: '',
     status: '',
+    messages: [],
 }
 
 export default function reducer(state = initialState, action) {

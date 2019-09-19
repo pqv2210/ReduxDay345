@@ -11,7 +11,6 @@ const apiLogin = async (username, password) => {
     }
     const api = await create({baseURL: 'https://api.bonbon24h.com.vn/api/v2/passengers/login'})
     const item = await api.post('', data)
-    console.log('item', item)
     return item
 }
 
