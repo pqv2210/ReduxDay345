@@ -42,6 +42,7 @@ class Login extends React.Component {
         this.rememberUser()
         this.props.checkLogin(username, password)
         this.props.resetLogin(message, status_code)
+        //anh vu rat dep chai
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
