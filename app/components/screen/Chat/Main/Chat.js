@@ -36,7 +36,7 @@ class Chat extends React.Component {
     }
 
     sendMessage = () => {
-        const {text} = this.state
+        const {text, messages} = this.state
         if (text !== '') {
             const item = {
                 text,
@@ -45,7 +45,7 @@ class Chat extends React.Component {
                     avatar: 'https://mymodernmet.com/wp/wp-content/uploads/2019/07/russian-blue-cats-17.jpg',
                 },
             }
-            const arr = this.state.messages.concat(item)
+            const arr = messages.concat(item)
             this.setState({
                 messages: arr,
                 isChecking: true,
@@ -66,8 +66,7 @@ class Chat extends React.Component {
                     avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWa039kQciNVVQ-AXImAVEcZce1Kib7TalX-x5irmDuj0RF7lXlA',
                 },
             }
-            const currentData = prevState.messages
-            const arr = currentData.concat(item)
+            const arr = prevState.messages.concat(item)
             return {
                 messages: arr,
                 isChecking: false,
@@ -133,8 +132,7 @@ class Chat extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        messages: state.reducer.messages,
-        data: state.reducer.data,
+        data: state.reducerFetchText.data,
     }
 }
 

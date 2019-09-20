@@ -1,9 +1,11 @@
 // Copyright (c) 2019-present vantuan88291, Personal. All Rights Reserved.
 import {combineReducers} from 'redux'
-import reducer from './reducer'
+import reducerFetchText from './reducerFetchText'
+import reducerLogin from './reducerLogin'
 
 const rootReducer = combineReducers({
-    reducer,
+    reducerFetchText,
+    reducerLogin,
 })
 
 export default rootReducer

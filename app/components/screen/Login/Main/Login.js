@@ -133,10 +133,10 @@ class Login extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        username: state.reducer.username,
-        password: state.reducer.password,
-        message: state.reducer.message,
-        status_code: state.reducer.status_code,
+        username: state.reducerLogin.username,
+        password: state.reducerLogin.password,
+        message: state.reducerLogin.message,
+        status_code: state.reducerLogin.status_code,
     }
 }
 

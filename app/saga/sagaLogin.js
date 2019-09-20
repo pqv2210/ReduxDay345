@@ -1,24 +1,13 @@
 // Copyright (c) 2019-present vantuan88291, Personal. All Rights Reserved.
-import {takeLatest, put, call} from 'redux-saga/effects'
-import apiFetch from '../services/apiFetch'
-import {getDataSuccess, loginFailure, loginSuccess} from '../actions/actions'
+import {call, put, takeLatest} from '@redux-saga/core/effects'
 import apiLogin from '../services/apiLogin'
+import {loginFailure, loginSuccess} from '../actions/actions'
 
-export function* watchFetchText() {
-    yield takeLatest('FETCH_TEXT', fetchTextFromAPI)
-}
-
-export function* fetchTextFromAPI(action) {
-    const {text} = action
-    const data = yield call(apiFetch, text)
-    yield put(getDataSuccess(data))
-}
-
-export function* watchCheckLogin() {
+export default function* watchCheckLogin() {
     yield takeLatest('LOGIN_REQUEST', callAPItoCheck)
 }
 
-export function* callAPItoCheck(action) {
+function* callAPItoCheck(action) {
     const {username, password} = action.payload
     const item = yield call(apiLogin, username, password)
     if (item.data.status_code === 200) {
